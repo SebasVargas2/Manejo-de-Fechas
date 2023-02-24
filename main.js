@@ -16,8 +16,7 @@ actual.addEventListener('click',now)
 
 const agregar=document.getElementById('enviar')
 agregar.addEventListener('click',()=>{aniadir()
-    agregar.disabled=true
-})
+    agregar.disabled=true})
 
 const utc=document.getElementById('utc')
 utc.addEventListener('click',fNumber)
@@ -38,9 +37,7 @@ dia1.addEventListener('click',tDia)
 
 function limpia(){
     document.getElementById('pantalla').innerHTML=''
-    document.getElementById('pantalla2').innerHTML=''
-
-}
+    document.getElementById('pantalla2').innerHTML=''}
 
 
 function aniadir(){
@@ -63,7 +60,9 @@ function aniadir(){
 
 function fParse(){
     //No es necesario hacer el cambio a numeros
-    let fecha3=new Date(Date.parse(fecha1))
+    
+    let fecha3=new Date(Date.parse(fecha1)) // usamos el metodo
+    
     contenido=fecha3
     document.getElementById('pantalla').innerHTML=contenido
     contenido=''
@@ -77,7 +76,9 @@ function fNumber(){
     fechaNumber[1]=fechaNumber[1]-1 
     fechaNumber[2]=fechaNumber[2]+1
     // Se cambia el valor del mes y del dia ya que en el sistema empieza en 0
+    
     let fecha2=new Date(Date.UTC(...fechaNumber)) //Usamos operador de propagacion para tomar cada elemento del array
+    
     //el Metodo UTC recorre desde 0
     
     // let fechaNumber=[2022,1,5]
@@ -93,7 +94,9 @@ function fNumber(){
 }
 
 function now(){
+
     date1=new Date()
+
     contenido+=date1
     document.getElementById('pantalla2').innerHTML=contenido
     contenido=''
@@ -101,7 +104,9 @@ function now(){
 
 
 function tAnio(){  //Trae el año
+
     date2=date1.getFullYear();
+
     contenido=date2
     document.getElementById('pantalla').innerHTML=date2
     contenido=''
@@ -109,7 +114,9 @@ function tAnio(){  //Trae el año
 
 
 function tMes(){  //Trae el mes
+
     date2=date1.getMonth();
+
     contenido=date2
     document.getElementById('pantalla').innerHTML=date2+1
     contenido=''
@@ -117,7 +124,9 @@ function tMes(){  //Trae el mes
 
 
 function tDia(){ //Trae el dia
+
     date2=date1.getDate();
+    
     contenido=date2
     document.getElementById('pantalla').innerHTML=date2
     contenido=''
